@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue Basics</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <button @click="changeTitle">Change Title</button>
+      <p>{{ title }}</p>
+      <input type="text" @input="cssClass = $event.target.value" />
+      <p :class="cssClass">Class: {{ cssClass }}</p>
+      <button @click="increment">Increment</button>
+      <p>Counter: {{ counter }}</p>
+      <p>Clicks: {{ clicks }}</p>
+      <button @click="show = !show">Show / Hide</button>
+      <p v-if="show">I'm part-time visible!</p>
+      <p v-else>Am I visible?</p>
+      <p v-show="show">Hurray I am here!</p>
+      <hr />
+      <ul>
+        <li v-for="person in persons">{{ person.name }}</li>
+      </ul>
+      <ul>
+        <li v-for="(person, index) in persons">
+          {{ person.name }} - {{ index }}
+        </li>
+      </ul>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
